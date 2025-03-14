@@ -8,6 +8,7 @@ const Div = styled.div`
 export const App = () => {
 	return (
 		<Div>
+			<i class="fa fa-camera-retro"></i>
 			<div>123</div>
 		</Div>
 	);
