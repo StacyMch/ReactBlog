@@ -1,9 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { Header } from './components';
+import { Header, Footer } from './components';
 import styled from 'styled-components';
-
-const Footer = () => <div>Футер</div>;
 
 const AppColumn = styled.div`
 	display: flex;
