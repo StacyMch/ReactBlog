@@ -15,7 +15,7 @@ const AppColumn = styled.div`
 	margin: 0 auto;
 `;
 
-const Content = styled.div`
+const Page = styled.div`
 	padding: 120px 0;
 `;
 
@@ -23,7 +23,7 @@ export const Blog = () => {
 	return (
 		<AppColumn>
 			<Header />
-			<Content>
+			<Page>
 				<Routes>
 					<Route path="/" element={<div>Главная страница</div>}></Route>
 					<Route path="/login" element={<Authorization />}></Route>
@@ -33,7 +33,7 @@ export const Blog = () => {
 					<Route path="/post/:postId" element={<div>Статья</div>}></Route>
 					<Route path="*" element={<div>Ошибка</div>}></Route>
 				</Routes>
-			</Content>
+			</Page>
 			<Footer />
 		</AppColumn>
 	);

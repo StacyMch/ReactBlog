@@ -5,14 +5,14 @@
       "login": "login",
       "password": "qwerty123",
       "registered_at": "2050-09-22",
-      "role_id": "0"
+      "role_id": 0
     },
     {
       "id": "b274",
       "login": "Ivan",
       "password": "qwerty123",
       "registered_at": "2042-07-27 16:56",
-      "role_id": 2
+      "role_id": 1
     },
     {
       "id": "26b9",
@@ -22,17 +22,10 @@
       "role_id": 2
     },
     {
-      "id": "3695",
-      "login": "dsgfdgs",
+      "id": "eb55",
+      "login": "test",
       "password": "123456",
-      "registered_at": "2045-02-15 20:14",
-      "role_id": 2
-    },
-    {
-      "id": "cb6e",
-      "login": "Ivan3",
-      "password": "qwerty123",
-      "registered_at": "2044-12-10 21:16",
+      "registered_at": "2042-03-15 03:21",
       "role_id": 2
     }
   ],
@@ -110,19 +103,19 @@
   ],
   "roles": [
     {
-      "id": "0",
+      "id": 0,
       "name": "Администратор"
     },
     {
-      "id": "1",
+      "id": 1,
       "name": "Модератор"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "Читатель"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Гость"
     }
   ]
