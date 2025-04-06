@@ -103,20 +103,85 @@
   ],
   "roles": [
     {
-      "id": 0,
+      "id": "0",
       "name": "Администратор"
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "Модератор"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Читатель"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Гость"
+    }
+  ],
+  "comments": [
+    {
+      "id": "964e",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2064-04-05 17:19",
+      "content": "Тест"
+    },
+    {
+      "id": "9131",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2057-08-02 20:26",
+      "content": "adgrehrehre"
+    },
+    {
+      "id": "3eda",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2045-05-11 20:51",
+      "content": "reherhseher"
+    },
+    {
+      "id": "aaf0",
+      "author_id": "001",
+      "post_id": "001",
+      "published_at": "2050-02-11 19:28",
+      "content": "Новый комментарий"
+    }
+  ],
+  "sessions": [
+    {
+      "id": "9dd0",
+      "hash": "0.34148433366444130854233662830665707588195800781250",
+      "user": {
+        "id": "001",
+        "login": "login",
+        "password": "qwerty123",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      }
+    },
+    {
+      "id": "56e5",
+      "hash": "0.13318891748036243427577574038878083229064941406250",
+      "user": {
+        "id": "001",
+        "login": "login",
+        "password": "qwerty123",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      }
+    },
+    {
+      "id": "3395",
+      "hash": "0.96640534469976890896703025646274909377098083496094",
+      "user": {
+        "id": "001",
+        "login": "login",
+        "password": "qwerty123",
+        "registeredAt": "2050-09-22",
+        "roleId": 0
+      }
     }
   ]
 }
