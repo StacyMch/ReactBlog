@@ -126,27 +126,6 @@
       "post_id": "001",
       "published_at": "2064-04-05 17:19",
       "content": "Тест"
-    },
-    {
-      "id": "9131",
-      "author_id": "001",
-      "post_id": "001",
-      "published_at": "2057-08-02 20:26",
-      "content": "adgrehrehre"
-    },
-    {
-      "id": "3eda",
-      "author_id": "001",
-      "post_id": "001",
-      "published_at": "2045-05-11 20:51",
-      "content": "reherhseher"
-    },
-    {
-      "id": "aaf0",
-      "author_id": "001",
-      "post_id": "001",
-      "published_at": "2050-02-11 19:28",
-      "content": "Новый комментарий"
     }
   ],
   "sessions": [

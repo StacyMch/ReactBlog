@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setUser } from './actions';
 import { Header, Footer } from './components';
+import { Modal } from './components';
 import { Authorization, Post, Registration, Users } from './pages';
 import styled from 'styled-components';
 
@@ -54,6 +55,7 @@ export const Blog = () => {
 				</Routes>
 			</Page>
 			<Footer />
+			<Modal />
 		</AppColumn>
 	);
 };
