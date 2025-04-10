@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setUser } from './actions';
 import { Header, Footer } from './components';
 import { Modal } from './components';
-import { Authorization, Post, Registration, Users } from './pages';
+import { Authorization, Main, Post, Registration, Users } from './pages';
 import styled from 'styled-components';
 
 const AppColumn = styled.div`
@@ -45,7 +45,7 @@ export const Blog = () => {
 			<Header />
 			<Page>
 				<Routes>
-					<Route path="/" element={<div>Главная страница</div>}></Route>
+					<Route path="/" element={<Main />}></Route>
 					<Route path="/login" element={<Authorization />}></Route>
 					<Route path="/register" element={<Registration />}></Route>
 					<Route path="/users" element={<Users />}></Route>
