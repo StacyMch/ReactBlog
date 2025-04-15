@@ -1,8 +1,11 @@
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import { selectUserRole } from '../../../../selectors';
 import { useServerRequest } from '../../../../hooks';
 import { openModal, CLOSE_MODAL, removePostAsync } from '../../../../actions';
 import { Icon } from '../../../../components';
+import { checkAccess } from '../../../../utils/check-access';
+import { ROLE } from '../../../../constants';
 import styled from 'styled-components';
 
 const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
@@ -24,6 +27,11 @@ const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 			}),
 		);
 	};
+
+	const userRole = useSelector(selectUserRole);
+
+	const isAdmin = checkAccess([ROLE.ADMIN], userRole);
+
 	return (
 		<div className={className}>
 			<div className="published-at">
@@ -38,17 +46,19 @@ const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
 				{publishedAt}
 			</div>
 
-			<div className="buttons">
-				{editButton}
-				{publishedAt && (
-					<Icon
-						id="fa-trash-o"
-						margin="0 8px 0 0"
-						size="21px"
-						onClick={() => onPostRemove(id)}
-					/>
-				)}
-			</div>
+			{isAdmin && (
+				<div className="buttons">
+					{editButton}
+					{publishedAt && (
+						<Icon
+							id="fa-trash-o"
+							margin="0 8px 0 0"
+							size="21px"
+							onClick={() => onPostRemove(id)}
+						/>
+					)}
+				</div>
+			)}
 		</div>
 	);
 };
