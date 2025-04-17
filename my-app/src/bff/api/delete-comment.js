@@ -1,4 +1,6 @@
+import { URL } from '../constants';
+
 export const deleteComment = (id) =>
-	fetch(`http://localhost:3005/comments/${id}`, {
+	fetch(`${URL}/comments/${id}`, {
 		method: 'DELETE',
 	});

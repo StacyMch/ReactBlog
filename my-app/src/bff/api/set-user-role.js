@@ -1,5 +1,7 @@
+import { URL } from '../constants';
+
 export const setUserRole = (userId, roleId) =>
-	fetch(`http://localhost:3005/users/${userId}`, {
+	fetch(`${URL}/users/${userId}`, {
 		method: 'PATCH',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8',

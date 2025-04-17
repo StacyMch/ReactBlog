@@ -1,5 +1,7 @@
+import { URL } from '../constants';
+
 export const updatePost = ({ id, imageUrl, title, content }) =>
-	fetch(`http://localhost:3005/posts/${id}`, {
+	fetch(`${URL}/posts/${id}`, {
 		method: 'PATCH',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8',

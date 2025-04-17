@@ -1,2 +1,4 @@
+import { URL } from '../constants';
+
 export const getRoles = () =>
-	fetch('http://localhost:3005/roles').then((loadedRoles) => loadedRoles.json());
+	fetch(`${URL}/roles`).then((loadedRoles) => loadedRoles.json());

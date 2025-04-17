@@ -1,7 +1,8 @@
 import { generateDate } from '../utils';
+import { URL } from '../constants';
 
 export const addPost = ({ imageUrl, title, content }) =>
-	fetch('http://localhost:3005/posts', {
+	fetch(`${URL}/posts`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8',

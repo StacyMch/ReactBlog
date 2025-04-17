@@ -1,4 +1,6 @@
+import { URL } from '../constants';
+
 export const deleteSession = async (sessionId) =>
-	fetch(`http://localhost:3005/sessions/${sessionId}`, {
+	fetch(`${URL}/sessions/${sessionId}`, {
 		method: 'DELETE',
 	});

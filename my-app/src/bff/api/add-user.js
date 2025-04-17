@@ -1,7 +1,8 @@
 import { generateDate } from '../utils';
+import { URL } from '../constants';
 
 export const addUser = (login, password) =>
-	fetch('http://localhost:3005/users', {
+	fetch(`${URL}/users`, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json;charset=utf-8',

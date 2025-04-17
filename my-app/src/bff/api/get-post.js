@@ -1,7 +1,8 @@
 import { transformPost } from '../transformers';
+import { URL } from '../constants';
 
 export const getPost = async (postId) =>
-	fetch(`http://localhost:3005/posts/${postId}`)
+	fetch(`${URL}/posts/${postId}`)
 		.then((res) => {
 			if (res.ok) {
 				return res;

@@ -1,4 +1,6 @@
+import { URL } from '../constants';
+
 export const deleteUser = (userId) =>
-	fetch(`http://localhost:3005/users/${userId}`, {
+	fetch(`${URL}/users/${userId}`, {
 		method: 'DELETE',
 	});

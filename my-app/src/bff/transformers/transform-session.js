@@ -2,6 +2,12 @@ export const transformSession = (dbSession) => {
 	return {
 		id: dbSession.id,
 		hash: dbSession.hash,
-		user: dbSession.user,
+		user: {
+			id: dbSession.user.id,
+			login: dbSession.user.login,
+			password: dbSession.user.password,
+			registeredAt: dbSession.user.registered_at,
+			roleId: dbSession.user.role_id,
+		},
 	};
 };

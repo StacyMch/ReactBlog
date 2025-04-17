@@ -15,7 +15,7 @@ const MainContainer = ({ className }) => {
 	const requestServer = useServerRequest();
 
 	useEffect(() => {
-		requestServer('fetchPosts', searchPhrase, page, PAGINATION_LIMIT).then(
+		requestServer('fetchPosts', searchPhrase, setPage, page, PAGINATION_LIMIT).then(
 			({ res: { posts, links } }) => {
 				setPosts(posts);
 				setLastPage(getLastPageFromLinks(links));
