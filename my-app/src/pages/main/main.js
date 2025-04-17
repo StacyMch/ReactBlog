@@ -15,7 +15,7 @@ const MainContainer = ({ className }) => {
 	const requestServer = useServerRequest();
 
 	useEffect(() => {
-		requestServer('fetchPosts', searchPhrase, setPage, page, PAGINATION_LIMIT).then(
+		requestServer('fetchPosts', searchPhrase, page, PAGINATION_LIMIT).then(
 			({ res: { posts, links } }) => {
 				setPosts(posts);
 				setLastPage(getLastPageFromLinks(links));
@@ -24,11 +24,19 @@ const MainContainer = ({ className }) => {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [requestServer, page, shouldSearch]);
 
-	const startDelayedSearch = useMemo(() => debounce(setShouldSearch, 2000), []);
+	const startDelayedSearch = useMemo(
+		() =>
+			debounce(() => {
+				setShouldSearch(true);
+				setPage(1);
+			}, 2000),
+		[],
+	);
 
 	const onSearch = ({ target }) => {
 		setSearchPhrase(target.value);
-		startDelayedSearch(!shouldSearch);
+		setShouldSearch(false);
+		startDelayedSearch();
 	};
 
 	return (
