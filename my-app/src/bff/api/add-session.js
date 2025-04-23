@@ -12,8 +12,8 @@ export const addSession = (hash, user) => {
 				id: user.id,
 				login: user.login,
 				password: user.password,
-				registered_at: user.registeredAt,
-				role_id: user.roleId,
+				registered_at: user.registered_at,
+				role_id: user.role_id,
 			},
 		}),
 	});
