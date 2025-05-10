@@ -1,5 +1,6 @@
 import { generateDate } from '../utils';
 import { URL } from '../constants';
+import { transformUser } from '../transformers';
 
 export const addUser = (login, password) =>
 	fetch(`${URL}/users`, {
@@ -13,4 +14,6 @@ export const addUser = (login, password) =>
 			registered_at: generateDate(),
 			role_id: 2,
 		}),
-	}).then((createdUser) => createdUser.json());
+	})
+		.then((createdUser) => createdUser.json())
+		.then((createdUser) => createdUser && transformUser(createdUser));

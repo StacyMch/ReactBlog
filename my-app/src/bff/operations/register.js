@@ -12,13 +12,14 @@ export const register = async (regLogin, regPassword) => {
 	}
 
 	const user = await addUser(regLogin, regPassword);
+	const { id, login, roleId } = user;
 
 	return {
 		error: null,
 		res: {
-			id: user.id,
-			login: user.login,
-			roleId: user.role_id,
+			id,
+			login,
+			roleId,
 			session: sessions.create(user),
 		},
 	};
