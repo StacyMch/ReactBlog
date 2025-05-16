@@ -1,0 +1,91 @@
+import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { selectUserRole } from '../../../../selectors';
+import { openModal, CLOSE_MODAL, removePostAsync } from '../../../../actions';
+import { Icon } from '../../../../components';
+import { checkAccess } from '../../../../utils/check-access';
+import { ROLE } from '../../../../constants';
+import styled from 'styled-components';
+import { getFormattedDateAndTime } from '../../../../utils/get-formatted-date-and-time';
+
+const SpecialPanelContainer = ({ className, id, publishedAt, editButton }) => {
+	const dispatch = useDispatch();
+	const navigate = useNavigate();
+
+	const onPostRemove = (id) => {
+		dispatch(
+			openModal({
+				text: 'Удалить статью?',
+				onConfirm: () => {
+					dispatch(removePostAsync(id)).then(() => {
+						navigate('/');
+					});
+					dispatch(CLOSE_MODAL);
+				},
+				onCancel: () => dispatch(CLOSE_MODAL),
+			}),
+		);
+	};
+
+	const userRole = useSelector(selectUserRole);
+
+	const isAdmin = checkAccess([ROLE.ADMIN], userRole);
+
+	return (
+		<div className={className}>
+			<div className="published-at">
+				{publishedAt && (
+					<Icon
+						id="fa-calendar-o"
+						margin="0 8px 0 0"
+						size="18px"
+						inactive={true}
+					/>
+				)}
+				{getFormattedDateAndTime(publishedAt)}
+			</div>
+
+			{isAdmin && (
+				<div className="buttons">
+					{editButton}
+					{publishedAt && (
+						<Icon
+							id="fa-trash-o"
+							margin="0 8px 0 0"
+							size="21px"
+							onClick={() => onPostRemove(id)}
+						/>
+					)}
+				</div>
+			)}
+		</div>
+	);
+};
+
+export const SpecialPanel = styled(SpecialPanelContainer)`
+	display: flex;
+	margin: 20px 0;
+	justify-content: space-between;
+	margin: ${({ margin }) => margin};
+
+	& i {
+		position: relative;
+		font-size: 18px;
+	}
+
+	& .published-at {
+		display: flex;
+		align-items: baseline;
+	}
+
+	& .buttons {
+		display: flex;
+	}
+`;
+
+SpecialPanel.propTypes = {
+	id: PropTypes.string,
+	publishedAt: PropTypes.string.isRequired,
+	editButton: PropTypes.node.isRequired,
+};
